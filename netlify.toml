@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/conversation/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/feedback"
+  to = "/index.html"
+  status = 200
