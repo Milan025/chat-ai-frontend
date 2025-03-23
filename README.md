@@ -1,12 +1,70 @@
-# React + Vite
+# AI Chat Application  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a **React-based AI Chat Application** where users can chat with an AI, provide feedback on responses, and view past conversations. It includes **Redux Toolkit for state management** and **Express.js for mocking AI responses**.  
 
-Currently, two official plugins are available:
+## **🚀 Features**
+- **AI Chat Interface**: Users can send messages, and AI provides responses.  
+- **Feedback System**: Users can react with 👍 or 👎 on AI responses.  
+- **Conversation History**: Past conversations are saved and accessible.  
+- **Share Conversations**: Generate a shareable link for any chat.  
+- **Feedback Overview**: View all feedback in a sortable table.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack & Justifications
+Frontend
+React.js (with Vite) → Fast development & optimized builds.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Redux Toolkit → Efficient state management.
+
+React Router → Navigation for different pages.
+
+Material UI → Pre-styled UI components for faster development.
+
+Backend
+Express.js → Lightweight and easy-to-setup mock API.
+
+CORS Middleware → To allow frontend-backend communication.
+
+Deployment
+Frontend: Netlify (Fast static hosting).
+
+Backend: Render (For free API hosting).
+
+## 🎨 Design Decisions
+Redux for State Management
+
+Redux enables global conversation tracking and feedback storage.
+
+Alternatives like React Context API were considered but Redux was chosen for better scalability.
+
+Express.js for API Mocking
+
+Instead of calling a real AI API (e.g., OpenAI), we mock responses using Express.js.
+
+This allows faster testing and offline development.
+
+Material UI for UI Design
+
+Used for quick styling and a clean, responsive UI.
+
+Reduces custom CSS work while maintaining a professional look.
+
+Shareable Conversation Links
+
+Implemented unique IDs for easy sharing of past chats.
+
+## ⚖️ Trade-offs & Future Improvements
+Trade-offs
+No real AI processing: Instead of integrating OpenAI, we used mock responses for simplicity.
+
+Limited error handling: API failures return a basic error message.
+
+Potential Improvements
+✅ Real AI Integration → Replace the mock API with OpenAI's GPT API.
+✅ Better Error Handling → Display retry options for failed responses.
+✅ Dark Mode Toggle → Implement user preference storage in Redux.
+✅ Mobile Responsiveness → Improve layout for smaller screens.
+
+## 📄 Deployment Links
+Live App: https://deccanai.netlify.app/conversation/DXQWzeDs2-w5KIeyNv54A
