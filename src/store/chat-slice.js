@@ -1,7 +1,7 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://chat-ai-backend-2g2h.onrender.com";
 
 const chatSlice = createSlice({
   name: "chat",
@@ -86,7 +86,7 @@ function transformConversations(input) {
 
 export const saveConversationToAPI =
   (conversationId, messages, feedback, rating) => async () => {
-    await axios.post(`${API_BASE_URL}/conversations`, {
+    await axios.post(`${API_BASE_URL}/api/conversations`, {
       id: conversationId,
       messages,
       feedback,
@@ -95,7 +95,7 @@ export const saveConversationToAPI =
   };
 
 export const fetchPastConversations = () => async (dispatch) => {
-  const response = await axios.get(`${API_BASE_URL}/conversations`);
+  const response = await axios.get(`${API_BASE_URL}/api/conversations`);
   dispatch(setPastConversations(response.data));
 };
 
